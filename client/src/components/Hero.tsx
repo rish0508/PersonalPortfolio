@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
 import Lottie from "lottie-react";
 import heroAnimation from "@/assets/hero-animation.json";
+import profileImg from "@/assets/profile.png";
 
 export default function Hero() {
   const containerVariants = {
@@ -84,14 +85,24 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex justify-center"
+          className="relative flex justify-center"
         >
-          <Lottie
-            animationData={heroAnimation}
-            loop={true}
-            autoplay={true}
-            style={{ width: 420, height: 420 }}
-          />
+          <div className="relative w-[300px] h-[400px] md:w-[400px] md:h-[530px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+            <img 
+              src={profileImg} 
+              alt="Rishabh Mathur" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          </div>
+          <div className="absolute -bottom-10 -right-10 pointer-events-none opacity-50 hidden lg:block">
+            <Lottie
+              animationData={heroAnimation}
+              loop={true}
+              autoplay={true}
+              style={{ width: 300, height: 300 }}
+            />
+          </div>
         </motion.div>
       </div>
 

@@ -77,36 +77,60 @@ async function seedDatabase() {
     });
 
     // Courses
-    await storage.createCourse({
-      code: "ECON 101",
-      title: "Principles of Microeconomics",
-      description: "Introduction to economic analysis of individual behavior and markets.",
-      specializations: ["Economics", "Microeconomic Theory"]
-    });
-    await storage.createCourse({
-      code: "ECON 102",
-      title: "Principles of Macroeconomics",
-      description: "Analysis of the economy as a whole, including inflation, unemployment, and growth.",
-      specializations: ["Economics", "Macroeconomic Policy"]
-    });
-    await storage.createCourse({
-      code: "ECON 325",
-      title: "Introduction to Empirical Economics",
-      description: "Basics of statistical inference and regression analysis in economic research.",
-      specializations: ["Econometrics", "Data Analysis"]
-    });
-    await storage.createCourse({
-      code: "STAT 302",
-      title: "Introduction to Probability",
-      description: "Probability theory with applications in statistics and modeling.",
-      specializations: ["Statistics", "Probability Modeling"]
-    });
-    await storage.createCourse({
-      code: "COMM 370",
-      title: "Corporate Finance",
-      description: "Financial decision-making in firms, valuation, and capital structure.",
-      specializations: ["Finance", "Valuation"]
-    });
+    const coursesToCreate = [
+      {
+        code: "CPSC 103",
+        title: "Introduction to Systematic Program Design",
+        description: "Introduction to fundamental concepts of systematic program design, focusing on solving problems using a systematic approach.",
+        specializations: ["Computer Science", "Software Design"]
+      },
+      {
+        code: "DSCI 100",
+        title: "Introduction to Data Science",
+        description: "Foundational concepts in data science, including data exploration, visualization, and basic statistical inference using R.",
+        specializations: ["Data Science", "R Programming"]
+      },
+      {
+        code: "ECON 325",
+        title: "Introduction to Empirical Economics",
+        description: "Essentials of probability and statistics for applied work in economics. Topics include estimation, hypothesis testing, and regression models.",
+        specializations: ["Economics", "Econometrics"]
+      },
+      {
+        code: "STAT 302",
+        title: "Introduction to Probability",
+        description: "Basic notions of probability, random variables, expectation, discrete and continuous distributions, and limit theorems.",
+        specializations: ["Statistics", "Probability Theory"]
+      },
+      {
+        code: "CPSC 330",
+        title: "Applied Machine Learning",
+        description: "Practical application of machine learning algorithms. Focuses on feature engineering, model selection, and evaluation techniques.",
+        specializations: ["Data Science", "Machine Learning"]
+      },
+      {
+        code: "ECON 326",
+        title: "Methods of Empirical Economics",
+        description: "Advanced statistical inference and regression analysis, focusing on identification and causal inference in economic research.",
+        specializations: ["Economics", "Econometrics"]
+      },
+      {
+        code: "STAT 443",
+        title: "Time Series and Forecasting",
+        description: "Analysis of time-dependent data, including stochastic processes, autocorrelation, and forecasting models like ARIMA.",
+        specializations: ["Statistics", "Forecasting"]
+      },
+      {
+        code: "MATH 221",
+        title: "Matrix Algebra",
+        description: "Systems of linear equations, matrices, determinants, eigenvalues, eigenvectors, and applications in linear algebra.",
+        specializations: ["Mathematics", "Linear Algebra"]
+      }
+    ];
+
+    for (const course of coursesToCreate) {
+      await storage.createCourse(course);
+    }
   }
 }
 

@@ -101,15 +101,25 @@ export default function Home() {
                    <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                      <BookOpen className="text-primary" /> Featured Courses
                    </h3>
-                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                   <div className="space-y-4">
                      {courses?.map((course, idx) => (
                        <motion.div 
                          key={idx}
-                         whileHover={{ y: -5 }}
+                         whileHover={{ x: 5 }}
                          className="p-4 bg-white/5 rounded-xl border border-white/5 hover:border-primary/50 transition-colors"
                        >
-                         <h4 className="text-white font-bold text-sm mb-1">{course.code}</h4>
-                         <p className="text-xs text-muted-foreground line-clamp-2">{course.title}</p>
+                         <div className="flex justify-between items-start mb-1">
+                           <h4 className="text-white font-bold text-sm">{course.code}</h4>
+                           <div className="flex gap-1">
+                             {course.specializations.map((spec, sIdx) => (
+                               <span key={sIdx} className="text-[10px] bg-white/10 px-1.5 py-0.5 rounded text-white/60 uppercase tracking-tighter">
+                                 {spec}
+                               </span>
+                             ))}
+                           </div>
+                         </div>
+                         <p className="text-xs text-white font-medium mb-1">{course.title}</p>
+                         <p className="text-[11px] text-muted-foreground leading-relaxed">{course.description}</p>
                        </motion.div>
                      ))}
                    </div>
