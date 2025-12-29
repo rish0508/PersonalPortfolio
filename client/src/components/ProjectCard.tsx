@@ -17,9 +17,9 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       whileHover={{ y: -5 }}
       className="group"
     >
-      <div className="h-full glass-card rounded-2xl p-8 flex flex-col transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] group-hover:border-primary/30">
+      <div className="h-full glass-card rounded-2xl p-8 flex flex-col transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.05)] group-hover:border-primary/30">
         <div className="flex justify-between items-start mb-4">
-          <div className="px-3 py-1 bg-secondary rounded-full text-xs font-mono text-primary/80 border border-white/5">
+          <div className="px-3 py-1 bg-secondary rounded-full text-xs font-mono text-white/80 border border-white/5">
             {project.period}
           </div>
           <ArrowUpRight className="text-muted-foreground group-hover:text-primary transition-colors" />
@@ -35,9 +35,9 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
         <div className="mt-6 pt-6 border-t border-white/5 flex gap-2">
           {/* Example tag - would ideally come from DB */}
-          <span className="text-xs font-medium text-indigo-300">Analysis</span>
-          <span className="text-xs font-medium text-indigo-300">•</span>
-          <span className="text-xs font-medium text-indigo-300">Finance</span>
+          <span className="text-xs font-medium text-white/60">Analysis</span>
+          <span className="text-xs font-medium text-white/60">•</span>
+          <span className="text-xs font-medium text-white/60">Finance</span>
         </div>
       </div>
     </motion.div>

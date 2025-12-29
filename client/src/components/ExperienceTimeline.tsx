@@ -55,14 +55,14 @@ function TimelineItem({ experience, isLeft, index }: { experience: Experience; i
     >
       {/* Content Side */}
       <div className="flex-1 w-full md:w-1/2 p-4">
-        <div className={`glass-card p-8 rounded-2xl hover:border-primary/50 transition-colors duration-300 ${isLeft ? "md:text-right" : "md:text-left"}`}>
+        <div className={`glass-card p-8 rounded-2xl border border-white/5 hover:border-primary/50 transition-colors duration-300 ${isLeft ? "md:text-right" : "md:text-left"}`}>
           <div className={`flex flex-col gap-2 mb-4 ${isLeft ? "md:items-end" : "md:items-start"}`}>
-            <span className="text-primary text-sm font-bold tracking-wider uppercase flex items-center gap-2">
+            <span className="text-white/60 text-sm font-bold tracking-wider uppercase flex items-center gap-2">
                {experience.period}
             </span>
             <h3 className="text-2xl font-bold text-white">{experience.title}</h3>
-            <div className="text-lg text-indigo-300 font-medium">{experience.company}</div>
-            <div className="text-sm text-muted-foreground flex items-center gap-1">
+            <div className="text-lg text-white font-medium">{experience.company}</div>
+            <div className="text-sm text-white/40 flex items-center gap-1">
               <MapPin className="w-3 h-3" /> {experience.location}
             </div>
           </div>
@@ -74,7 +74,7 @@ function TimelineItem({ experience, isLeft, index }: { experience: Experience; i
       </div>
 
       {/* Center Dot */}
-      <div className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background shadow-[0_0_20px_rgba(59,130,246,0.5)] transform -translate-x-[9px] md:-translate-x-1/2 mt-6 md:mt-0 z-10" />
+      <div className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background transform -translate-x-[9px] md:-translate-x-1/2 mt-6 md:mt-0 z-10" />
 
       {/* Empty Side for Layout Balance */}
       <div className="hidden md:block flex-1 w-1/2" />

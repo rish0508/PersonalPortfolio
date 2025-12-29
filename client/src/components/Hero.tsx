@@ -31,8 +31,8 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Gradient Orbs */}
-      <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[128px] opacity-40 pointer-events-none" />
-      <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-[128px] opacity-30 pointer-events-none" />
+      <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-white/5 rounded-full blur-[128px] opacity-40 pointer-events-none" />
+      <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-white/5 rounded-full blur-[128px] opacity-30 pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
         <motion.div
@@ -42,7 +42,7 @@ export default function Hero() {
           className="max-w-4xl"
         >
           <motion.div variants={itemVariants} className="mb-6">
-            <span className="px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium tracking-wide uppercase">
+            <span className="px-4 py-2 rounded-full border border-white/30 bg-white/10 text-white text-sm font-medium tracking-wide uppercase">
               Available for Fall 2025 Opportunities
             </span>
           </motion.div>
@@ -52,7 +52,7 @@ export default function Hero() {
             className="text-5xl md:text-7xl lg:text-8xl font-bold font-display text-white mb-6 leading-tight"
           >
             Rishabh <br />
-            <span className="text-gradient-primary">Mathur</span>
+            <span className="text-gradient">Mathur</span>
           </motion.h1>
 
           <motion.p 
@@ -66,7 +66,7 @@ export default function Hero() {
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
             <a
               href="#experience"
-              className="px-8 py-4 rounded-xl bg-primary text-background font-bold text-lg flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25"
+              className="px-8 py-4 rounded-xl bg-white text-black font-bold text-lg flex items-center justify-center gap-2 hover:bg-white/90 transition-colors shadow-lg shadow-white/10"
             >
               Explore My Work <ArrowRight className="w-5 h-5" />
             </a>

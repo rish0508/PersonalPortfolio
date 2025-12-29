@@ -18,8 +18,8 @@
   --popover: 0 0% 3%;
   --popover-foreground: 0 0% 100%;
 
-  --primary: 210 100% 50%;
-  --primary-foreground: 0 0% 100%;
+  --primary: 0 0% 100%;
+  --primary-foreground: 0 0% 0%;
 
   --secondary: 0 0% 10%;
   --secondary-foreground: 0 0% 100%;
@@ -64,7 +64,7 @@
   }
 
   .glass-card {
-    @apply bg-card/50 backdrop-blur-xl border border-white/10 shadow-xl;
+    @apply bg-card/50 backdrop-blur-xl border border-white/5 shadow-xl;
   }
   
   .perspective-1000 {

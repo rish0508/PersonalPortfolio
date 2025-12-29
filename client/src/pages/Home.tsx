@@ -15,7 +15,7 @@ export default function Home() {
   const { data: courses } = useCourses();
 
   return (
-    <div className="bg-background min-h-screen selection:bg-primary/30 text-foreground overflow-x-hidden relative">
+    <div className="bg-black min-h-screen selection:bg-white/30 text-white overflow-x-hidden relative">
       {/* Shooting Stars Container */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         {[...Array(10)].map((_, i) => (

@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Linkedin, FileText } from "lucide-react";
+import { Menu, X, Linkedin, FileText, Moon, Sun } from "lucide-react";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +15,16 @@ export default function Navigation() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    root.classList.remove("light", "dark");
+    root.classList.add(theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === "dark" ? "light" : "dark");
+  };
 
   const navLinks = [
     { name: "About", href: "#about" },
@@ -34,7 +45,7 @@ export default function Navigation() {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link href="/" className="text-xl font-display font-bold text-white tracking-wider z-50">
-          RM<span className="text-primary">.</span>
+          RM<span className="text-white">.</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -50,6 +61,12 @@ export default function Navigation() {
           ))}
           <div className="h-6 w-px bg-white/10 mx-2" />
           <div className="flex items-center gap-4">
+            <button 
+              onClick={toggleTheme}
+              className="p-2 rounded-full hover:bg-white/10 transition-colors text-white"
+            >
+              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
             <a
               href="https://www.linkedin.com/in/rishabhmathur0508/"
               target="_blank"
@@ -59,7 +76,7 @@ export default function Navigation() {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="/resume.pdf" // Placeholder path for resume
+              href="/resume.pdf"
               target="_blank"
               className="text-muted-foreground hover:text-white transition-colors flex items-center gap-2 text-sm font-medium"
             >
@@ -69,12 +86,20 @@ export default function Navigation() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-white z-50"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X /> : <Menu />}
-        </button>
+        <div className="flex items-center gap-4 md:hidden z-50">
+          <button 
+            onClick={toggleTheme}
+            className="p-2 rounded-full hover:bg-white/10 transition-colors text-white"
+          >
+            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          <button
+            className="text-white"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X /> : <Menu />}
+          </button>
+        </div>
 
         {/* Mobile Nav Overlay */}
         <AnimatePresence>
