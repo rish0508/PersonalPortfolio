@@ -38,4 +38,13 @@ export const api = {
       },
     },
   },
+  courses: {
+    list: {
+      method: 'GET' as const,
+      path: '/api/courses',
+      responses: {
+        200: z.array(z.custom<typeof courses.$inferSelect>()),
+      },
+    },
+  },
 };
