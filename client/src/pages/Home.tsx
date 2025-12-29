@@ -44,9 +44,7 @@ export default function Home() {
           </motion.div>
         ))}
       </div>
-
       <Navigation />
-      
       <div className="relative z-10">
         <Hero />
 
@@ -56,10 +54,7 @@ export default function Home() {
             <div>
               <SectionHeading title="About Me" />
               <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
-                <p>
-                  For me, 2025 was less about ticking boxes and more about asking better questions. 
-                  I immersed myself in finance not just as a career path, but as a lens to understand the world.
-                </p>
+                <p>Hi, I’m Rishabh Mathur. I study Economics and Statistics at the University of British Columbia, with a minor in Data Science, and I’ve passed CFA Level I. My interests sit at the intersection of finance, data, risk, and technology, and I’m motivated by understanding how complex systems work and how better decisions are made within them.  I’ve gained hands-on experience working at major financial institutions including CIBC and Scotia Wealth Management, where I was exposed to internal audit, private banking, underwriting, and risk management. These roles helped me build a strong foundation in financial analysis, controls, and client decision-making, while also teaching me how large organizations operate in practice.  Alongside finance, I’ve been actively immersing myself in the AI and automation space, building websites and small applications, and experimenting with tools across Python, SQL, Power BI, and modern AI workflows. I enjoy exploring how technology can streamline processes, surface better insights, and shape the future of work in financial services.  I’m someone who values learning by doing. Whether it’s applying statistical theory to markets, building tools from scratch, or exploring new problem spaces, I’m always looking to stay on the right learning curve. This site is a space where I share what I’m working on, what I’m learning, and where I’m headed next.</p>
                 <p>
                   Currently pursuing a double major in Economics and Statistics at UBC, I've had the privilege 
                   of applying my analytical skills at top institutions like <span className="text-white font-medium">CIBC</span> and <span className="text-white font-medium">Scotia Wealth Management</span>.

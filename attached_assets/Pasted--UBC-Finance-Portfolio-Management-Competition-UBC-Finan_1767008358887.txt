@@ -1,0 +1,27 @@
+
+UBC Finance Portfolio Management Competition
+UBC Finance Portfolio Management Competition
+Mar 2024 - Apr 2024Mar 2024 - Apr 2024
+Created a portfolio to achieve the highest Sharpe ratio within the given investment horizon of 1 month. Aimed for an aggressive portfolio with higher weightage towards financials, gold, and energy at the time. Placed 5th position at the end of the competition.
+Created a portfolio to achieve the highest Sharpe ratio within the given investment horizon of 1 month. Aimed for an aggressive portfolio with higher weightage towards financials, gold, and energy at the time. Placed 5th position at the end of the competition.
+National Investment Banking Competition
+National Investment Banking Competition
+Dec 2023 - Jan 2024Dec 2023 - Jan 2024
+Analyzed financial data and conducted valuations on Diageo PLC by utilizing skills in financial modeling and market research to create a strategic business plan. This included conducting a Discounted Cash Flow Analysis, Comps Analysis and Precedent Analysis.
+Analyzed financial data and conducted valuations on Diageo PLC by utilizing skills in financial modeling and market research to create a strategic business plan. This included conducting a Discounted Cash Flow Analysis, Comps Analysis and Precedent Analysis.
+Skills: Financial Modeling
+Skills: Financial Modeling
+NwPlus Hackathon
+NwPlus Hackathon
+Nov 2023 - Nov 2023Nov 2023 - Nov 2023
+Developed a student-focused budgeting website in 12 hours, leveraging Python, Figma Mastery, React, and HTML. Applied expense calculations with personalized recommendations and utilized assigned weights for optimal adjustments
+Developed a student-focused budgeting website in 12 hours, leveraging Python, Figma Mastery, React, and HTML. Applied expense calculations with personalized recommendations and utilized assigned weights for optimal adjustments
+UBC Environmental Policy Association X Student Energy Association Case Competition
+UBC Environmental Policy Association X Student Energy Association Case Competition
+Nov 2023 - Nov 2023Nov 2023 - Nov 2023
+Secured 1st Prize in the competition by finding the most sustainable energy avenue to revolutionize a nation’s energy industry. Conducted a detailed feasibility study to forecast future cash outflows for each energy avenue using excel.
+Secured 1st Prize in the competition by finding the most sustainable energy avenue to revolutionize a nation’s energy industry. Conducted a detailed feasibility study to forecast future cash outflows for each energy avenue using excel.
+Tradistics - A Step Towards The Future
+Tradistics - A Step Towards The Future
+Feb 2020 - Jun 2020Feb 2020 - Jun 2020
+The project focuses on ways to connect local businesses amidst the pandemic. As borders closed, covid-19 gave rise to tectonic changes in importing costs. Thus, countries that were previously self-reliant were the ones who had a higher degree of business efficiency during the current state of affairs. To counter this problem, I created an online platform for local business trading (B2B). The solution was presented ICBMIS Global Conference and received the best prototype solution award.
