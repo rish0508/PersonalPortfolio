@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Linkedin, FileText, Moon, Sun } from "lucide-react";
+import { Menu, X, Linkedin, FileText } from "lucide-react";
+import resumePdf from "@/assets/resume.pdf";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,18 +18,14 @@ export default function Navigation() {
 
   useEffect(() => {
     const root = window.document.documentElement;
-    root.classList.remove("light", "dark");
-    root.classList.add(theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prev => prev === "dark" ? "light" : "dark");
-  };
+    root.classList.add("dark");
+  }, []);
 
   const navLinks = [
     { name: "About", href: "#about" },
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
+    { name: "Courses", href: "#courses" },
     { name: "Skills", href: "#skills" },
   ];
 
@@ -61,12 +57,6 @@ export default function Navigation() {
           ))}
           <div className="h-6 w-px bg-white/10 mx-2" />
           <div className="flex items-center gap-4">
-            <button 
-              onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-white/10 transition-colors text-white"
-            >
-              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
             <a
               href="https://www.linkedin.com/in/rishabhmathur0508/"
               target="_blank"
@@ -76,7 +66,7 @@ export default function Navigation() {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="/src/assets/resume.pdf"
+              href={resumePdf}
               target="_blank"
               className="text-muted-foreground hover:text-white transition-colors flex items-center gap-2 text-sm font-medium"
             >
@@ -87,12 +77,6 @@ export default function Navigation() {
 
         {/* Mobile Menu Button */}
         <div className="flex items-center gap-4 md:hidden z-50">
-          <button 
-            onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-white/10 transition-colors text-white"
-          >
-            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
           <button
             className="text-white"
             onClick={() => setIsOpen(!isOpen)}
@@ -129,6 +113,13 @@ export default function Navigation() {
                   className="p-3 rounded-full bg-secondary text-white"
                 >
                   <Linkedin className="w-6 h-6" />
+                </a>
+                <a
+                  href={resumePdf}
+                  target="_blank"
+                  className="p-3 rounded-full bg-secondary text-white"
+                >
+                  <FileText className="w-6 h-6" />
                 </a>
               </div>
             </motion.div>

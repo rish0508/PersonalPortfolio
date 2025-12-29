@@ -51,65 +51,33 @@ export default function Home() {
         {/* About Section */}
         <section id="about" className="py-24 container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div>
+            <div className="bg-zinc-900/50 rounded-3xl p-8 border border-white/10">
               <SectionHeading title="About Me" />
-              <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
-                <p>Hi, I’m Rishabh Mathur. I study Economics and Statistics at the University of British Columbia, with a minor in Data Science, and I’ve passed CFA Level I. My interests sit at the intersection of finance, data, risk, and technology, and I’m motivated by understanding how complex systems work and how better decisions are made within them.</p>
-                <p>I’ve gained hands-on experience working at major financial institutions including CIBC and Scotia Wealth Management, where I was exposed to internal audit, private banking, underwriting, and risk management. These roles helped me build a strong foundation in financial analysis, controls, and client decision-making, while also teaching me how large organizations operate in practice.</p>
-                <p>Alongside finance, I’ve been actively immersing myself in the AI and automation space, building websites and small applications, and experimenting with tools across Python, SQL, Power BI, and modern AI workflows. I enjoy exploring how technology can streamline processes, surface better insights, and shape the future of work in financial services.</p>
-                <p>I’m someone who values learning by doing. Whether it’s applying statistical theory to markets, building tools from scratch, or exploring new problem spaces, I’m always looking to stay on the right learning curve. This site is a space where I share what I’m working on, what I’m learning, and where I’m headed next.</p>
+              <div className="space-y-5 text-muted-foreground text-lg leading-relaxed">
+                <p>Hi, I'm Rishabh Mathur. I study Economics and Statistics at the University of British Columbia, with a minor in Data Science, and I've passed CFA Level I. My interests sit at the intersection of finance, data, risk, and technology, and I'm motivated by understanding how complex systems work and how better decisions are made within them.</p>
+                <p>I've gained hands-on experience working at major financial institutions including CIBC and Scotia Wealth Management, where I was exposed to internal audit, private banking, underwriting, and risk management. These roles helped me build a strong foundation in financial analysis, controls, and client decision-making, while also teaching me how large organizations operate in practice.</p>
+                <p>Alongside finance, I've been actively immersing myself in the AI and automation space, building websites and small applications, and experimenting with tools across Python, SQL, Power BI, and modern AI workflows. I enjoy exploring how technology can streamline processes, surface better insights, and shape the future of work in financial services.</p>
+                <p>I'm someone who values learning by doing. Whether it's applying statistical theory to markets, building tools from scratch, or exploring new problem spaces, I'm always looking to stay on the right learning curve. This site is a space where I share what I'm working on, what I'm learning, and where I'm headed next.</p>
               </div>
             </div>
             <div className="space-y-8">
                {/* Education Card */}
                <div className="relative">
-                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-3xl transform rotate-1" />
-                 <div className="relative glass-card p-8 rounded-3xl border border-white/10">
+                 <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent rounded-3xl transform rotate-1" />
+                 <div className="relative bg-zinc-900/80 p-8 rounded-3xl border border-white/10">
                    <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                     <GraduationCap className="text-primary" /> Education
+                     <GraduationCap className="text-white" /> Education
                    </h3>
                    <div className="space-y-6">
                      {education?.map((edu, idx) => (
                        <div key={idx} className="pb-6 border-b border-white/5 last:border-0 last:pb-0">
-                         <div className="flex justify-between items-start mb-1">
-                           <h4 className="text-white font-bold">{edu.school}</h4>
+                         <div className="flex justify-between items-start mb-1 flex-wrap gap-2">
+                           <h4 className="text-white font-bold text-lg">{edu.school}</h4>
                            <span className="text-xs text-muted-foreground font-mono bg-white/5 px-2 py-1 rounded">{edu.period}</span>
                          </div>
-                         <p className="text-primary text-sm font-medium mb-2">{edu.degree}</p>
+                         <p className="text-white/80 text-sm font-medium mb-2">{edu.degree}</p>
                          {edu.details && <p className="text-sm text-muted-foreground">{edu.details}</p>}
                        </div>
-                     ))}
-                   </div>
-                 </div>
-               </div>
-
-               {/* Courses Section */}
-               <div className="relative">
-                 <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 to-transparent rounded-3xl transform -rotate-1" />
-                 <div className="relative glass-card p-8 rounded-3xl border border-white/10">
-                   <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                     <BookOpen className="text-primary" /> Featured Courses
-                   </h3>
-                   <div className="space-y-4">
-                     {courses?.map((course, idx) => (
-                       <motion.div 
-                         key={idx}
-                         whileHover={{ x: 5 }}
-                         className="p-4 bg-white/5 rounded-xl border border-white/5 hover:border-primary/50 transition-colors"
-                       >
-                         <div className="flex justify-between items-start mb-1">
-                           <h4 className="text-white font-bold text-sm">{course.code}</h4>
-                           <div className="flex gap-1">
-                             {course.specializations.map((spec, sIdx) => (
-                               <span key={sIdx} className="text-[10px] bg-white/10 px-1.5 py-0.5 rounded text-white/60 uppercase tracking-tighter">
-                                 {spec}
-                               </span>
-                             ))}
-                           </div>
-                         </div>
-                         <p className="text-xs text-white font-medium mb-1">{course.title}</p>
-                         <p className="text-[11px] text-muted-foreground leading-relaxed">{course.description}</p>
-                       </motion.div>
                      ))}
                    </div>
                  </div>
@@ -119,9 +87,9 @@ export default function Home() {
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="py-24 vancouver-skyline">
+        <section id="experience" className="py-24 bg-gradient-to-b from-zinc-900/50 to-black">
           <div className="container mx-auto px-6">
-            <SectionHeading title="Experience" subtitle="Professional journey through top-tier financial institutions and tech." align="center" />
+            <SectionHeading title="Experience" subtitle="Professional journey through top-tier financial institutions." align="center" />
             <ExperienceTimeline />
           </div>
         </section>
@@ -130,15 +98,49 @@ export default function Home() {
         <section id="projects" className="py-24 container mx-auto px-6">
           <SectionHeading title="Selected Projects" subtitle="Competitions and analyses that sharpened my skills." />
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects?.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
             ))}
           </div>
         </section>
 
+        {/* Courses Section */}
+        <section id="courses" className="py-24 bg-gradient-to-b from-black to-zinc-900/50">
+          <div className="container mx-auto px-6">
+            <SectionHeading title="Featured Courses" subtitle="UBC coursework spanning Computer Science, Economics, Statistics, and Data Science." align="center" />
+            
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {courses?.map((course, idx) => (
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.03 }}
+                  whileHover={{ y: -3 }}
+                  className="bg-zinc-900/80 p-5 rounded-xl border border-white/10 hover:border-white/30 transition-all"
+                >
+                  <div className="flex justify-between items-start mb-2">
+                    <h4 className="text-white font-bold text-base">{course.code}</h4>
+                    <div className="flex gap-1">
+                      {course.specializations.map((spec: string, sIdx: number) => (
+                        <span key={sIdx} className="text-[10px] bg-white/10 px-2 py-0.5 rounded text-white/70 uppercase tracking-wide">
+                          {spec}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-sm text-white/90 font-medium mb-2">{course.title}</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{course.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Skills Section */}
-        <section id="skills" className="py-24 bg-black/40">
+        <section id="skills" className="py-24 bg-black">
           <div className="container mx-auto px-6 max-w-5xl">
             <SectionHeading title="Technical Arsenal" align="center" />
             
@@ -150,9 +152,9 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="glass-card p-6 rounded-2xl border border-white/5"
+                  className="bg-zinc-900/80 p-6 rounded-2xl border border-white/10"
                 >
-                  <h3 className="text-lg font-bold text-white mb-6 border-l-4 border-primary pl-4">
+                  <h3 className="text-lg font-bold text-white mb-6 border-l-4 border-white pl-4">
                     {skillGroup.category}
                   </h3>
                   <div className="flex flex-wrap gap-2">
@@ -167,21 +169,20 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="py-12 border-t border-white/5 bg-background/50 backdrop-blur-md">
+        <footer className="py-12 border-t border-white/5 bg-black">
           <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-center md:text-left">
               <h4 className="text-2xl font-bold font-display text-white mb-1">Rishabh Mathur</h4>
               <p className="text-muted-foreground text-sm">Finance & Statistics @ UBC</p>
             </div>
             
-            <div className="flex gap-6">
+            <div className="flex gap-6 flex-wrap justify-center">
               <a href="https://www.linkedin.com/in/rishabhmathur0508/" target="_blank" className="text-muted-foreground hover:text-white transition-colors">LinkedIn</a>
-              <a href="mailto:contact@rishabhmathur.com" className="text-muted-foreground hover:text-white transition-colors">Email</a>
-              <a href="/resume.pdf" target="_blank" className="text-muted-foreground hover:text-white transition-colors">Resume</a>
+              <a href="mailto:rish05@student.ubc.ca" className="text-muted-foreground hover:text-white transition-colors">Email</a>
             </div>
             
             <div className="text-xs text-muted-foreground text-center md:text-right">
-              © {new Date().getFullYear()} Rishabh Mathur.<br />All rights reserved.
+              {new Date().getFullYear()} Rishabh Mathur. All rights reserved.
             </div>
           </div>
         </footer>
