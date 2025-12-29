@@ -76,7 +76,7 @@ export default function Navigation() {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="/resume.pdf"
+              href="/src/assets/resume.pdf"
               target="_blank"
               className="text-muted-foreground hover:text-white transition-colors flex items-center gap-2 text-sm font-medium"
             >

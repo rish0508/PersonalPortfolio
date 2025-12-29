@@ -8,124 +8,66 @@ async function seedDatabase() {
   if (existingExp.length === 0) {
     // Experiences
     await storage.createExperience({
-      title: "Summer Analyst - Internal Audit (Wealth Management & Data Analytics)",
+      title: "Summer Analyst - Internal Audit (Wealth & Data Analytics)",
       company: "CIBC",
       period: "May 2025 - Aug 2025",
-      location: "Toronto, Ontario",
-      description: "Analyzed application access rights for 1,200+ employees using Excel, PowerBI and IA Hub. Tested 20+ samples of Non-CIBC Product Exceptions. Developed structured prompts in CIBCAI to automate repetitive control testing."
+      location: "Toronto, ON",
+      description: "Evaluated 20+ investment products against manuals using Excel/Morningstar. Mitigated SOX risks for 1,200+ employees and designed AI prompts generating 300+ annual efficiency hours."
     });
     await storage.createExperience({
       title: "Fall Analyst - Private Banking",
       company: "Scotia Wealth Management",
       period: "Sep 2024 - Dec 2024",
       location: "Vancouver, BC",
-      description: "Analyzed and undertook financial transactions for HNW clients. Assisted in due diligence by analyzing financial statements. Ensured compliance with KYC and AML regulations."
+      description: "Processed 1,000+ transactions and synthesized briefs for HNW clients. Conducted KYC/AML compliance reviews and calculated NAVs for credit adjudication."
     });
     await storage.createExperience({
-      title: "Winter Analyst - Wealth Management",
+      title: "Winter Analyst – Tax Administration",
       company: "Scotia Wealth Management",
       period: "Jan 2024 - Apr 2024",
       location: "Vancouver, BC",
-      description: "Wealth Management Analysis and support functions."
+      description: "Reconciled 50+ T1 and 40+ T3 tax returns for HNW clients. Automated tax-fee calculations via Excel scripts, significantly reducing manual data entry."
     });
     await storage.createExperience({
-      title: "Events Director",
-      company: "Vancouver School of Economics Undergraduate Society (VSEUS)",
-      period: "Aug 2022 - May 2023",
-      location: "Vancouver, BC",
-      description: "Planned and executed 5+ events. Led lectures on personal finance. Served as ambassador for VSEUS at 10+ conferences."
-    });
-
-    // Education
-    await storage.createEducation({
-      school: "The University of British Columbia",
-      degree: "Bachelor of Arts - Combined Majors in Economics and Statistics",
-      period: "Jan 2021 - May 2026",
-      details: "Grade: 3.75 GPA. Activities: VSEUS, UBC Finance Club, UBC Product Management, UBC Real Estate Club, UBC Wargamers."
-    });
-    await storage.createEducation({
-      school: "Delhi Private School, Sharjah",
-      degree: "High School Diploma",
-      period: "Apr 2007 - May 2021",
-      details: "Grade: 97.6%. Vice Head Boy. Subjects: Business, Economics, Accountancy, Mathematics, English, Arabic."
+      title: "Summer Analyst",
+      company: "Credit Suisse",
+      period: "Jul 2022 - Aug 2022",
+      location: "Dubai, UAE",
+      description: "Leveraged Bloomberg and CapIQ for investment strategy research and valuation. Delivered client stock pitches and modeled cash flows for portfolio decisions."
     });
 
     // Projects
     await storage.createProject({
-      title: "UBC Finance Portfolio Management Competition",
+      title: "UBC Finance Portfolio Management",
       period: "Mar 2024 - Apr 2024",
-      description: "Created a portfolio to achieve the highest Sharpe ratio. Aimed for an aggressive portfolio with higher weightage towards financials, gold, and energy. Placed 5th position."
+      description: "Constructed an aggressive portfolio (Financials, Gold, Energy) to maximize Sharpe ratio. Ranked 5th place in the competition."
     });
     await storage.createProject({
       title: "National Investment Banking Competition",
-      period: "Dec 2023 - Jan 2024",
-      description: "Participated in the National Investment Banking Competition."
+      period: "Oct 2023 - Jan 2024",
+      description: "Conducted DCF and Comps analysis for Diageo PLC. Created a comprehensive pitchbook and strategic business plan."
     });
-
-    // Skills
-    await storage.createSkill({
-      category: "Certifications",
-      items: ["CFA Program Level 1 (Above 90th percentile)", "Bloomberg Market Concepts"]
+    await storage.createProject({
+      title: "NwPlus Hackathon - Budgeting Web App",
+      period: "Nov 2023",
+      description: "Built a React/Python budgeting tool for students in 12 hours. Implemented personalized expense weighting and AI-driven recommendations."
     });
-    await storage.createSkill({
-      category: "Technical Skills",
-      items: ["Excel (VLOOKUP, Macros, Pivot Tables)", "PowerBI", "Python (Applied Machine Learning)", "R (Statistical Modelling)", "Data Analysis"]
-    });
-    await storage.createSkill({
-      category: "Core Competencies",
-      items: ["Financial Analysis", "Equity Research", "Internal Audit", "Wealth Management", "Econometrics", "Time Series Analysis"]
+    await storage.createProject({
+      title: "Tradistics - B2B Platform",
+      period: "Feb 2020 - Jun 2020",
+      description: "Designed a pandemic-era local business trading platform. Received 'Best Prototype Solution' award at ICBMIS Global Conference."
     });
 
     // Courses
     const coursesToCreate = [
-      {
-        code: "CPSC 103",
-        title: "Introduction to Systematic Program Design",
-        description: "Introduction to fundamental concepts of systematic program design, focusing on solving problems using a systematic approach.",
-        specializations: ["Computer Science", "Software Design"]
-      },
-      {
-        code: "DSCI 100",
-        title: "Introduction to Data Science",
-        description: "Foundational concepts in data science, including data exploration, visualization, and basic statistical inference using R.",
-        specializations: ["Data Science", "R Programming"]
-      },
-      {
-        code: "ECON 325",
-        title: "Introduction to Empirical Economics",
-        description: "Essentials of probability and statistics for applied work in economics. Topics include estimation, hypothesis testing, and regression models.",
-        specializations: ["Economics", "Econometrics"]
-      },
-      {
-        code: "STAT 302",
-        title: "Introduction to Probability",
-        description: "Basic notions of probability, random variables, expectation, discrete and continuous distributions, and limit theorems.",
-        specializations: ["Statistics", "Probability Theory"]
-      },
-      {
-        code: "CPSC 330",
-        title: "Applied Machine Learning",
-        description: "Practical application of machine learning algorithms. Focuses on feature engineering, model selection, and evaluation techniques.",
-        specializations: ["Data Science", "Machine Learning"]
-      },
-      {
-        code: "ECON 326",
-        title: "Methods of Empirical Economics",
-        description: "Advanced statistical inference and regression analysis, focusing on identification and causal inference in economic research.",
-        specializations: ["Economics", "Econometrics"]
-      },
-      {
-        code: "STAT 443",
-        title: "Time Series and Forecasting",
-        description: "Analysis of time-dependent data, including stochastic processes, autocorrelation, and forecasting models like ARIMA.",
-        specializations: ["Statistics", "Forecasting"]
-      },
-      {
-        code: "MATH 221",
-        title: "Matrix Algebra",
-        description: "Systems of linear equations, matrices, determinants, eigenvalues, eigenvectors, and applications in linear algebra.",
-        specializations: ["Mathematics", "Linear Algebra"]
-      }
+      { code: "CPSC 103", title: "Introduction to Systematic Program Design", description: "Learning to design programs that are correct, easy to read, and easy to maintain using systematic techniques.", specializations: ["CS", "Design"] },
+      { code: "ECON 325", title: "Introduction to Empirical Economics", description: "Essentials of probability and statistics for economics, including hypothesis testing and regression models.", specializations: ["ECON", "Data"] },
+      { code: "STAT 302", title: "Introduction to Probability", description: "Foundational concepts of probability, random variables, and limit theorems with mathematical rigor.", specializations: ["STAT", "Theory"] },
+      { code: "CPSC 330", title: "Applied Machine Learning", description: "Practical ML tools emphasizing solving real-world problems with data cleaning and supervised learning.", specializations: ["AI", "Data Science"] },
+      { code: "ECON 326", title: "Introduction to Econometrics II", description: "Advanced statistical inference focusing on identification and causal inference in economic research data.", specializations: ["ECON", "Econometrics"] },
+      { code: "STAT 443", title: "Time Series and Forecasting", description: "Analysis of time-dependent data and forecasting models like ARIMA for predictive insights.", specializations: ["STAT", "Forecasting"] },
+      { code: "MATH 221", title: "Matrix Algebra", description: "Linear systems, eigenvalues, and vector spaces essential for quantitative finance and statistics.", specializations: ["MATH", "Linear Algebra"] },
+      { code: "DSCI 100", title: "Introduction to Data Science", description: "Exploring data through visualization and statistical inference using modern computational tools.", specializations: ["Data Science", "R"] }
     ];
 
     for (const course of coursesToCreate) {

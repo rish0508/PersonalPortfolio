@@ -72,7 +72,7 @@ export default function Hero() {
               Explore My Work <ArrowRight className="w-5 h-5" />
             </a>
             <a
-              href="/resume.pdf"
+              href="/src/assets/resume.pdf"
               target="_blank"
               className="px-8 py-4 rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm text-white font-medium text-lg flex items-center justify-center gap-2 hover:bg-white/10 transition-colors"
             >
