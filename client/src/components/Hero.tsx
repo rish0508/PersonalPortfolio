@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
+import Lottie from "lottie-react";
+import heroAnimation from "@/assets/hero-animation.json";
 
 export default function Hero() {
   const containerVariants = {
@@ -32,7 +34,7 @@ export default function Hero() {
       <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[128px] opacity-40 pointer-events-none" />
       <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-[128px] opacity-30 pointer-events-none" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -76,6 +78,20 @@ export default function Hero() {
               Download Resume <Download className="w-5 h-5" />
             </a>
           </motion.div>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="flex justify-center"
+        >
+          <Lottie
+            animationData={heroAnimation}
+            loop={true}
+            autoplay={true}
+            style={{ width: 420, height: 420 }}
+          />
         </motion.div>
       </div>
 

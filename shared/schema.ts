@@ -1,4 +1,4 @@
-import { pgTable, text, serial, varchar, jsonb } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, jsonb } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -28,16 +28,16 @@ export const projects = pgTable("projects", {
 
 export const skills = pgTable("skills", {
   id: serial("id").primaryKey(),
-  category: text("category").notNull(), // e.g., "Technical", "Certifications"
+  category: text("category").notNull(),
   items: jsonb("items").$type<string[]>().notNull(),
 });
 
 export const courses = pgTable("courses", {
   id: serial("id").primaryKey(),
   code: text("code").notNull(),
-  name: text("name").notNull(),
+  title: text("title").notNull(),
   description: text("description").notNull(),
-  specialization: text("specialization").notNull(),
+  specializations: jsonb("specializations").$type<string[]>().notNull(),
 });
 
 export const insertExperienceSchema = createInsertSchema(experiences).omit({ id: true });
@@ -55,17 +55,8 @@ export type InsertEducation = z.infer<typeof insertEducationSchema>;
 export type Project = typeof projects.$inferSelect;
 export type InsertProject = z.infer<typeof insertProjectSchema>;
 
-export const courses = pgTable("courses", {
-  id: serial("id").primaryKey(),
-  code: text("code").notNull(),
-  title: text("title").notNull(),
-  description: text("description").notNull(),
-  specializations: jsonb("specializations").$type<string[]>().notNull(),
-});
-
-export const insertCourseSchema = createInsertSchema(courses).omit({ id: true });
-export type Course = typeof courses.$inferSelect;
-export type InsertCourse = z.infer<typeof insertCourseSchema>;
+export type Skill = typeof skills.$inferSelect;
+export type InsertSkill = z.infer<typeof insertSkillSchema>;
 
 export type Course = typeof courses.$inferSelect;
 export type InsertCourse = z.infer<typeof insertCourseSchema>;

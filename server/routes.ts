@@ -75,6 +75,38 @@ async function seedDatabase() {
       category: "Core Competencies",
       items: ["Financial Analysis", "Equity Research", "Internal Audit", "Wealth Management", "Econometrics", "Time Series Analysis"]
     });
+
+    // Courses
+    await storage.createCourse({
+      code: "ECON 101",
+      title: "Principles of Microeconomics",
+      description: "Introduction to economic analysis of individual behavior and markets.",
+      specializations: ["Economics", "Microeconomic Theory"]
+    });
+    await storage.createCourse({
+      code: "ECON 102",
+      title: "Principles of Macroeconomics",
+      description: "Analysis of the economy as a whole, including inflation, unemployment, and growth.",
+      specializations: ["Economics", "Macroeconomic Policy"]
+    });
+    await storage.createCourse({
+      code: "ECON 325",
+      title: "Introduction to Empirical Economics",
+      description: "Basics of statistical inference and regression analysis in economic research.",
+      specializations: ["Econometrics", "Data Analysis"]
+    });
+    await storage.createCourse({
+      code: "STAT 302",
+      title: "Introduction to Probability",
+      description: "Probability theory with applications in statistics and modeling.",
+      specializations: ["Statistics", "Probability Modeling"]
+    });
+    await storage.createCourse({
+      code: "COMM 370",
+      title: "Corporate Finance",
+      description: "Financial decision-making in firms, valuation, and capital structure.",
+      specializations: ["Finance", "Valuation"]
+    });
   }
 }
 
@@ -102,6 +134,11 @@ export async function registerRoutes(
 
   app.get(api.skills.list.path, async (_req, res) => {
     const data = await storage.getSkills();
+    res.json(data);
+  });
+
+  app.get(api.courses.list.path, async (_req, res) => {
+    const data = await storage.getCourses();
     res.json(data);
   });
 

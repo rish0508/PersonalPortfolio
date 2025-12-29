@@ -47,3 +47,14 @@ export function useSkills() {
     },
   });
 }
+
+export function useCourses() {
+  return useQuery({
+    queryKey: [api.courses.list.path],
+    queryFn: async () => {
+      const res = await fetch(api.courses.list.path);
+      if (!res.ok) throw new Error("Failed to fetch courses");
+      return api.courses.list.responses[200].parse(await res.json());
+    },
+  });
+}
