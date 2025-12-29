@@ -42,12 +42,6 @@ export default function Hero() {
           animate="visible"
           className="max-w-4xl"
         >
-          <motion.div variants={itemVariants} className="mb-6">
-            <span className="px-4 py-2 rounded-full border border-white/30 bg-white/10 text-white text-sm font-medium tracking-wide uppercase">
-              Available for Fall 2025 Opportunities
-            </span>
-          </motion.div>
-
           <motion.h1 
             variants={itemVariants}
             className="text-5xl md:text-7xl lg:text-8xl font-bold font-display text-white mb-6 leading-tight"
