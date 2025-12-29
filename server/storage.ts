@@ -1,10 +1,11 @@
 import { db } from "./db";
 import {
-  experiences, education, projects, skills,
+  experiences, education, projects, skills, courses,
   type Experience, type InsertExperience,
   type Education, type InsertEducation,
   type Project, type InsertProject,
-  type Skill, type InsertSkill
+  type Skill, type InsertSkill,
+  type Course, type InsertCourse
 } from "@shared/schema";
 
 export interface IStorage {
@@ -12,16 +13,18 @@ export interface IStorage {
   getEducation(): Promise<Education[]>;
   getProjects(): Promise<Project[]>;
   getSkills(): Promise<Skill[]>;
+  getCourses(): Promise<Course[]>;
   
   createExperience(data: InsertExperience): Promise<Experience>;
   createEducation(data: InsertEducation): Promise<Education>;
   createProject(data: InsertProject): Promise<Project>;
   createSkill(data: InsertSkill): Promise<Skill>;
+  createCourse(data: InsertCourse): Promise<Course>;
 }
 
 export class DatabaseStorage implements IStorage {
   async getExperiences(): Promise<Experience[]> {
-    return await db.select().from(experiences).orderBy(experiences.id); // Ideally order by date, using ID for simplicity here (inserted in order)
+    return await db.select().from(experiences).orderBy(experiences.id);
   }
 
   async getEducation(): Promise<Education[]> {
@@ -34,6 +37,10 @@ export class DatabaseStorage implements IStorage {
 
   async getSkills(): Promise<Skill[]> {
     return await db.select().from(skills);
+  }
+
+  async getCourses(): Promise<Course[]> {
+    return await db.select().from(courses);
   }
 
   async createExperience(data: InsertExperience): Promise<Experience> {
@@ -53,6 +60,11 @@ export class DatabaseStorage implements IStorage {
 
   async createSkill(data: InsertSkill): Promise<Skill> {
     const [newItem] = await db.insert(skills).values(data).returning();
+    return newItem;
+  }
+
+  async createCourse(data: InsertCourse): Promise<Course> {
+    const [newItem] = await db.insert(courses).values(data).returning();
     return newItem;
   }
 }
