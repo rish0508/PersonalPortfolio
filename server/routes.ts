@@ -35,6 +35,20 @@ async function seedDatabase() {
       location: "Dubai, UAE",
       description: "Leveraged Bloomberg and CapIQ for investment strategy research and valuation. Delivered client stock pitches and modeled cash flows for portfolio decisions."
     });
+    await storage.createExperience({
+      title: "Resident Advisor",
+      company: "University of British Columbia",
+      period: "Aug 2022 - May 2023",
+      location: "Vancouver, BC",
+      description: "Built meaningful relationships with 100+ first-year students through community programming and proactive support, enhancing communication, stakeholder engagement, and client relationship management skillsets."
+    });
+    await storage.createExperience({
+      title: "Backshop Team Member",
+      company: "Shaughnessy Golf & Country Club",
+      period: "May 2022 - Aug 2022",
+      location: "Vancouver, BC",
+      description: "Cleaned and maintained golf clubs, set up golf caddies, and provided members with their golf bags. Answered member inquiries with professionalism and maintained a presentable appearance at all times."
+    });
 
     // Education with Data Science minor
     await storage.createEducation({
