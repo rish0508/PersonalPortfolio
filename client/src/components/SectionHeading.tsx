@@ -20,7 +20,7 @@ export default function SectionHeading({ title, subtitle, align = "left" }: Sect
           <span className="text-white">.</span>
         </h2>
         {subtitle && (
-          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto md:mx-0 font-light">
+          <p className={`text-muted-foreground text-lg md:text-xl max-w-2xl font-light ${align === "center" ? "mx-auto" : "mx-auto md:mx-0"}`}>
             {subtitle}
           </p>
         )}
