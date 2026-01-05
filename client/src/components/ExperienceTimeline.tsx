@@ -7,7 +7,7 @@ import { Experience } from "@shared/schema";
 import cibcImg from "@assets/stock_images/cibc_square.png";
 import scotiaImg from "@assets/stock_images/scotia_tower.png";
 import creditSuisseImg from "@assets/stock_images/credit_suisse.png";
-import ubcImg from "@assets/stock_images/ubc_university_campu_01fb3a6f.jpg";
+import ubcImg from "@assets/stock_images/ubc_campus.png";
 import golfImg from "@assets/stock_images/shaughnessy_golf.png";
 
 const companyImages: Record<string, string> = {
@@ -98,12 +98,12 @@ function TimelineItem({ experience, isLeft, index }: { experience: Experience; i
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="w-full max-w-xs overflow-hidden rounded-xl border border-white/10"
+            className="w-full max-w-sm overflow-hidden rounded-xl border border-white/10 shadow-lg"
           >
             <img 
               src={companyImage} 
               alt={experience.company}
-              className="w-full h-48 object-cover"
+              className="w-full h-56 object-cover object-center"
               data-testid={`img-company-${index}`}
             />
           </motion.div>

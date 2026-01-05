@@ -54,10 +54,8 @@ export default function Home() {
             <div className="bg-zinc-900/50 rounded-3xl p-8 border border-white/10">
               <SectionHeading title="About Me" />
               <div className="space-y-5 text-muted-foreground text-lg leading-relaxed">
-                <p>Hi, I'm Rishabh Mathur. I study Economics and Statistics at the University of British Columbia, with a minor in Data Science, and I've passed CFA Level I. My interests sit at the intersection of finance, data, risk, and technology, and I'm motivated by understanding how complex systems work and how better decisions are made within them.</p>
-                <p>I've gained hands-on experience working at major financial institutions including CIBC and Scotia Wealth Management, where I was exposed to internal audit, private banking, underwriting, and risk management. These roles helped me build a strong foundation in financial analysis, controls, and client decision-making, while also teaching me how large organizations operate in practice.</p>
-                <p>Alongside finance, I've been actively immersing myself in the AI and automation space, building websites and small applications, and experimenting with tools across Python, SQL, Power BI, and modern AI workflows. I enjoy exploring how technology can streamline processes, surface better insights, and shape the future of work in financial services.</p>
-                <p>I'm someone who values learning by doing. Whether it's applying statistical theory to markets, building tools from scratch, or exploring new problem spaces, I'm always looking to stay on the right learning curve. This site is a space where I share what I'm working on, what I'm learning, and where I'm headed next.</p>
+                <p>Economics and Statistics student at UBC with a minor in Data Science. CFA Level I passed. Passionate about the intersection of finance, data, and technology.</p>
+                <p>I explore how technology can streamline processes and shape the future of financial services, working with Python, SQL, Power BI, and modern AI workflows.</p>
               </div>
             </div>
             <div className="space-y-8">
@@ -90,6 +88,16 @@ export default function Home() {
         <section id="experience" className="py-24 bg-gradient-to-b from-zinc-900/50 to-black">
           <div className="container mx-auto px-6">
             <SectionHeading title="Experience" subtitle="Professional journey through top-tier financial institutions." align="center" />
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-3xl mx-auto text-center mb-16"
+            >
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                I've gained hands-on experience at major financial institutions including CIBC and Scotia Wealth Management, building a strong foundation in financial analysis, controls, and client decision-making across internal audit, private banking, underwriting, and risk management.
+              </p>
+            </motion.div>
             <ExperienceTimeline />
           </div>
         </section>
