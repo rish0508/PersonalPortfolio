@@ -4,11 +4,11 @@ import { MapPin } from "lucide-react";
 import { useExperiences } from "@/hooks/use-portfolio";
 import { Experience } from "@shared/schema";
 
-import cibcImg from "@assets/stock_images/cibc_bank_office_bui_f5bd1fc2.jpg";
-import scotiaImg from "@assets/stock_images/scotiabank_bank_buil_4f08b3ae.jpg";
-import creditSuisseImg from "@assets/stock_images/credit_suisse_bank_b_6241f6e3.jpg";
+import cibcImg from "@assets/stock_images/cibc_square.png";
+import scotiaImg from "@assets/stock_images/scotia_tower.png";
+import creditSuisseImg from "@assets/stock_images/credit_suisse.png";
 import ubcImg from "@assets/stock_images/ubc_university_campu_01fb3a6f.jpg";
-import golfImg from "@assets/stock_images/golf_course_green_la_75bad4d3.jpg";
+import golfImg from "@assets/stock_images/shaughnessy_golf.png";
 
 const companyImages: Record<string, string> = {
   "CIBC": cibcImg,

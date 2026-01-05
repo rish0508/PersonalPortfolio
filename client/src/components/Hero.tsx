@@ -80,13 +80,14 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="relative flex justify-center"
+          className="relative flex justify-center group"
         >
-          <div className="relative w-[300px] h-[400px] md:w-[400px] md:h-[530px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+          <div className="absolute inset-0 w-[300px] h-[400px] md:w-[400px] md:h-[530px] rounded-3xl bg-gradient-to-r from-white/20 via-white/5 to-white/20 blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-700 mx-auto" />
+          <div className="relative w-[300px] h-[400px] md:w-[400px] md:h-[530px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl group-hover:border-white/30 transition-all duration-500 group-hover:shadow-white/10">
             <img 
               src={profileImg} 
               alt="Rishabh Mathur" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           </div>

@@ -138,7 +138,10 @@ const courses = [
   { id: 16, code: "ECON 425", title: "Advanced Econometrics", description: "Maximum likelihood estimation, generalized least squares, instrumental variables, panel data, and discrete choice models.", specializations: ["ECON"] },
   { id: 17, code: "MATH 200", title: "Calculus III", description: "Multivariable calculus: partial derivatives, multiple integrals, vector calculus, applications to optimization.", specializations: ["MATH"] },
   { id: 18, code: "MATH 220", title: "Mathematical Proof", description: "Sets and functions, induction, cardinality. Introduction to rigorous mathematical proof techniques.", specializations: ["MATH"] },
-  { id: 19, code: "MATH 221", title: "Matrix Algebra", description: "Systems of linear equations, matrices, determinants, eigenvalues and eigenvectors, vector spaces and linear transformations.", specializations: ["MATH"] }
+  { id: 19, code: "MATH 221", title: "Matrix Algebra", description: "Systems of linear equations, matrices, determinants, eigenvalues and eigenvectors, vector spaces and linear transformations.", specializations: ["MATH"] },
+  { id: 20, code: "ECON 490", title: "Seminar in Applied Economics", description: "Capstone research course applying econometric methods to independent empirical research. Students produce a complete research paper in applied economics.", specializations: ["ECON"] },
+  { id: 21, code: "CPSC 368", title: "Databases in Data Science", description: "Overview of relational and non-relational database systems, data modelling, query languages, and query optimization for data science workflows.", specializations: ["CS", "Data"] },
+  { id: 22, code: "DSCI 310", title: "Reproducible and Trustworthy Workflows for Data Science", description: "Automation of code testing and analytic reports, software dependency management, packaging and deploying data analysis software, and version control collaboration.", specializations: ["Data"] }
 ];
 
 export function useExperiences() {
