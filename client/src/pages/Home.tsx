@@ -118,7 +118,7 @@ export default function Home() {
           <div className="container mx-auto px-6">
             <SectionHeading title="Featured Courses" subtitle="UBC coursework spanning Computer Science, Economics, Statistics, and Data Science." align="center" />
             
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center max-w-6xl mx-auto">
               {courses?.map((course, idx) => (
                 <motion.div 
                   key={idx}

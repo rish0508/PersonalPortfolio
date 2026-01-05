@@ -4,8 +4,8 @@ import { MapPin } from "lucide-react";
 import { useExperiences } from "@/hooks/use-portfolio";
 import { Experience } from "@shared/schema";
 
-import cibcImg from "@assets/stock_images/cibc_square.png";
-import scotiaImg from "@assets/stock_images/scotia_tower.png";
+import cibcImg from "@assets/stock_images/cibc_new.png";
+import scotiaImg from "@assets/stock_images/scotia_new.png";
 import creditSuisseImg from "@assets/stock_images/credit_suisse.png";
 import ubcImg from "@assets/stock_images/ubc_campus.png";
 import golfImg from "@assets/stock_images/shaughnessy_golf.png";
