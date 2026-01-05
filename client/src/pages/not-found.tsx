@@ -22,7 +22,7 @@ export default function NotFound() {
               The page you are looking for does not exist. It might have been moved or deleted.
             </p>
 
-            <Link href="/">
+            <Link href="~/">
               <button className="w-full px-4 py-2 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors">
                 Return to Portfolio
               </button>
