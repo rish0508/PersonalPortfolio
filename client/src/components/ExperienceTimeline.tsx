@@ -1,8 +1,22 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Briefcase, Calendar, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { useExperiences } from "@/hooks/use-portfolio";
 import { Experience } from "@shared/schema";
+
+import cibcImg from "@assets/stock_images/cibc_bank_office_bui_f5bd1fc2.jpg";
+import scotiaImg from "@assets/stock_images/scotiabank_bank_buil_4f08b3ae.jpg";
+import creditSuisseImg from "@assets/stock_images/credit_suisse_bank_b_6241f6e3.jpg";
+import ubcImg from "@assets/stock_images/ubc_university_campu_01fb3a6f.jpg";
+import golfImg from "@assets/stock_images/golf_course_green_la_75bad4d3.jpg";
+
+const companyImages: Record<string, string> = {
+  "CIBC": cibcImg,
+  "Scotia Wealth Management": scotiaImg,
+  "Credit Suisse": creditSuisseImg,
+  "University of British Columbia": ubcImg,
+  "Shaughnessy Golf & Country Club": golfImg,
+};
 
 export default function ExperienceTimeline() {
   const { data: experiences, isLoading } = useExperiences();
@@ -18,10 +32,9 @@ export default function ExperienceTimeline() {
 
   return (
     <div ref={ref} className="relative py-20 overflow-hidden">
-      {/* Center Line */}
-      <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent transform -translate-x-1/2 hidden md:block" />
+      <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent transform -translate-x-1/2 hidden md:block" />
       
-      <div className="space-y-24">
+      <div className="space-y-16">
         {experiences.map((exp, index) => (
           <TimelineItem 
             key={index} 
@@ -44,6 +57,7 @@ function TimelineItem({ experience, isLeft, index }: { experience: Experience; i
 
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const y = useTransform(scrollYProgress, [0, 1], [100, 0]);
+  const companyImage = companyImages[experience.company];
 
   return (
     <motion.div
@@ -54,30 +68,47 @@ function TimelineItem({ experience, isLeft, index }: { experience: Experience; i
       }`}
     >
       {/* Content Side */}
-      <div className="flex-1 w-full md:w-1/2 p-4">
-        <div className={`glass-card p-8 rounded-2xl border border-white/5 hover:border-primary/50 transition-colors duration-300 ${isLeft ? "md:text-right" : "md:text-left"}`}>
+      <div className="flex-1 w-full md:w-1/2 p-4" data-testid={`experience-card-${index}`}>
+        <div className={`bg-zinc-900/80 p-6 rounded-2xl border border-white/10 hover:border-white/30 transition-colors duration-300 ${isLeft ? "md:text-right" : "md:text-left"}`}>
           <div className={`flex flex-col gap-2 mb-4 ${isLeft ? "md:items-end" : "md:items-start"}`}>
-            <span className="text-white/60 text-sm font-bold tracking-wider uppercase flex items-center gap-2">
+            <span className="text-white/60 text-sm font-bold tracking-wider uppercase">
                {experience.period}
             </span>
-            <h3 className="text-2xl font-bold text-white">{experience.title}</h3>
-            <div className="text-lg text-white font-medium">{experience.company}</div>
+            <h3 className="text-xl font-bold text-white">{experience.title}</h3>
+            <div className="text-lg text-white/90 font-medium">{experience.company}</div>
             <div className="text-sm text-white/40 flex items-center gap-1">
               <MapPin className="w-3 h-3" /> {experience.location}
             </div>
           </div>
           
-          <p className="text-muted-foreground leading-relaxed whitespace-pre-line text-sm">
+          <p className="text-muted-foreground leading-relaxed text-sm">
             {experience.description}
           </p>
         </div>
       </div>
 
       {/* Center Dot */}
-      <div className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background transform -translate-x-[9px] md:-translate-x-1/2 mt-6 md:mt-0 z-10" />
+      <div className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-white border-4 border-background transform -translate-x-[9px] md:-translate-x-1/2 mt-6 md:mt-0 z-10" />
 
-      {/* Empty Side for Layout Balance */}
-      <div className="hidden md:block flex-1 w-1/2" />
+      {/* Image Side */}
+      <div className="hidden md:flex flex-1 w-1/2 p-4 justify-center" data-testid={`experience-image-container-${index}`}>
+        {companyImage && (
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="w-full max-w-xs overflow-hidden rounded-xl border border-white/10"
+          >
+            <img 
+              src={companyImage} 
+              alt={experience.company}
+              className="w-full h-48 object-cover"
+              data-testid={`img-company-${index}`}
+            />
+          </motion.div>
+        )}
+      </div>
     </motion.div>
   );
 }
